@@ -15,7 +15,7 @@ def stop():
 
 # Inputs between 0-1023 to control both motors
 def drive(L, R):
-    if on_the_moon == True:
+    if on_the_moon is True:
         sleep(1255)
     # Below controls the left wheel: forward, backward, stop at given speed
     if L > 0 and L <= 1023:
@@ -55,11 +55,11 @@ while True:
     message = radio.receive()
     if message is not None:
 
-        if message = 'earth':
+        if message == 'earth':
             on_the_moon = False
-        elif message = 'moon':
+        elif message == 'moon':
             on_the_moon = True
-        elif message = 'stop':
+        elif message == 'stop':
             stop()
 
         else:
@@ -71,8 +71,8 @@ while True:
                         speed = int(message[1])
                         if speed > 1023:
                             speed = 1023
-                        elif speed < 400:
-                            speed = 400
+                        elif speed < 300:
+                            speed = 300
 
                         time = int(message[2])
                         if time > 10000:
