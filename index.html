@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Moon Buggies</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+  <header>
+    <a href="https://scienceoxford.com" target="_blank"><img src=".\images\so_logo.png" alt="Science Oxford Logo" width="400px" height="auto"></a>
+    <h1>CCC - Moon Buggies</h1>
+  </header>
+
+  <div id="intro">
+    <p>Resources for the 'Moon Buggies' Creative Computing Club.</p>
+    <p>During this workshop, you will program robot buggies to collect 'moon rocks'.</p>
+    <p>This page recaps what <a href="https://bit.ly/May22CCC" target="_blank">we discussed as a group</a>.</p>
+    <p>To skip to the examples and ideas, <a href="#extensions">click here</a>.</p>
+    <br>
+  </div>
+
+  <div id="starter" class="left">
+    <h3>Creating your first micro:bit program</h3>
+    <p><a href="..." target="_blank">Click here to find the starter program, with the imports ready.</a></p>
+    <p>Open <a href="https://codewith.mu/" target="_blank">the Mu editor</a> on your computer. <strong>If there is code on the screen</strong>, start a New program from the menu.</p>
+    <img src="https://raw.githubusercontent.com/ScienceOxford/cyber-pet/master/images/mu_toolbar_new.png" alt="Mu menu, highlighting 'New'" width="1000px" height="auto">
+    <p>Type these lines of code into your blank window:</p>
+    <pre>from microbit import *
+import radio
+
+display.show(Image.HAPPY)</pre>
+    <br>
+    <p>Plug your micro:bit into the computer, then click Flash:</p>
+    <img src="https://raw.githubusercontent.com/ScienceOxford/cyber-pet/master/images/mu_toolbar_flash.png" alt="Mu menu, highlighting 'Flash'" width="1000px" height="auto">
+    <p>Some code should be running on your micro:bit!</p>
+    <p><strong>If you get a message scrolling across the micro:bit's screen</strong>, this is an error message!</p>
+    <p><strong>Debug</strong> your code, then click Flash again to test your changes.</p>
+    <p>Once your code is working - change it!</p>
+    <p>Instead of <code>HAPPY</code>, can you think of another <code>Image</code> the micro:bit could <code>show</code> on its <code>display</code>?</p>
+    <br>
+  </div>
+
+  <div id="on-the-moon" class="left">
+    <h3>Testing your Moonbuggy</h3>
+    <p>-- radio.on() + radio.config - use your robot's number</p>
+    <pre>radio.on()
+radio.config(channel=0)</pre>
+    <br>
+    <p>-- flash code to your micro:bit THEN click 'REPL' to open the terminal</p>
+    <p>-- in the terminal, type <code>radio.send('forward 500 500')</code> - what happens?</p>
+    <p>-- careful of spelling and spaces</p>
+    <p>-- try other directions 'backward' 'left' 'right'</p>
+    <p>-- first number is speed (up to 1023), second number is time (up to 10000, 10s)</p>
+    <br>
+  </div>
+
+  <div id="on-earth" class="left">
+    <h3>Back to Earth</h3>
+    <p>-- difficult to test with the delay - scientists will practice on Earth before sending anything up into space</p>
+    <p>-- <code>radio.send('earth')</code> - will remove the delay ('moon' will put it back)</p>
+    <br>
+  </div>
+
+  <div id="grabber" class="left">
+    <h3>Using the Grabber</h3>
+    <p>-- <code>radio.send('grab 1')</code></p>
+    <p>-- the grabbers have been set to 6 different positions (1 is most closed, 6 is most open)</p>
+    <p>-- test them - what options work best for the moon rocks?</p>
+    <br>
+  </div>
+
+  <div id="functions" class="left">
+    <h3>Type more quickly with Functions</h3>
+    <p>make new function:</p>
+    <pre>def do(message):
+    radio.send(str(message))</pre>
+    <br>
+    <p>-- now you can type <code>do('forward 500 500')</code></p>
+    <p>-- saves you a bit of typing each time, which adds up!</p>
+    <br>
+    <p>-- combine radio.send() instructions (up to 8 at once) in a new function, so you can send lots of instructions in one go</p>
+    <p>e.g. to open the grabber, drive forward a small amount, then close the grabber... put all three instructions in a function then call it. every time you want to use the grabber, you now only need to type 1 line</p>
+    <pre>def grabber1():
+    radio.send('grab 5')
+    radio.send('forward 500 1000')
+    radio.send('grab 1')</pre>
+    <br>
+    <p>To call it, type <code>grabber1()</code> - much quicker!</p>
+    <br>
+  </div>
+
+  <div id="extensions" class="left">
+    <h3>What next?</h3>
+    <p>The links below give you some other ideas of things you could add to your project.</p>
+    <br>
+  </div>
+
+  <nav class="links bg_green">
+    <a href="sounds.html" target="_blank">add sound effects and music</a>
+    <a href="servo.html" target="_blank">edit the grabber code</a>
+    <a href="robot.html" target="_blank">edit the motor code</a>
+  </nav>
+
+  <footer class="links">
+    <a href="https://github.com/ScienceOxford/moon-buggies/" target="_blank">View on GitHub</a>
+  </footer>
+
+</body>
+
+</html>
