@@ -70,8 +70,8 @@ while True:
                     speed = int(message[1])
                     if speed > 1023:
                         speed = 1023
-                    elif speed < 300:
-                        speed = 300
+                    elif speed < 400:
+                        speed = 400
 
                     time = int(message[2])
                     if time > 10000:
