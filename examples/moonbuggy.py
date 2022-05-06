@@ -84,7 +84,7 @@ while True:
                         drive(-speed, speed)
                     elif message[0] == 'right':
                         drive(speed, -speed)
-                    elif message[0] == 'backward' or message[0] = 'backwards':
+                    elif message[0] == 'backward' or message[0] == 'backwards':
                         drive(-speed, -speed)
 
                     sleep(time)
