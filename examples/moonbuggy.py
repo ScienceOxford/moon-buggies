@@ -48,13 +48,12 @@ radio.on()
 radio.config(channel=0, queue=10) #CHANGE CHANNEL
 
 on_the_moon = True
-directions = ['forward', 'left', 'right', 'backward']
+directions = ['forward', 'forwards', 'left', 'right', 'backward', 'backwards']
 grabber = {'1': 35, '2': 40, '3': 45, '4': 50, '5': 55, '6': 60}
 
 while True:
-    message = radio.receive()
-    if message is not None:
-
+    message = (radio.receive())
+    if message is not None and len(str(message).lower().split()) > 0: # if string contains at least one "word"
         if message == 'earth':
             on_the_moon = False
         elif message == 'moon':
@@ -79,13 +78,13 @@ while True:
                     elif speed < 100:
                         speed = 100
 
-                    if message[0] == 'forward':
+                    if message[0] == 'forward' or message[0] == 'forwards':
                         drive(speed, speed)
                     elif message[0] == 'left':
                         drive(-speed, speed)
                     elif message[0] == 'right':
                         drive(speed, -speed)
-                    elif message[0] == 'backward':
+                    elif message[0] == 'backward' or message[0] == 'backwards':
                         drive(-speed, -speed)
 
                     sleep(time)
@@ -93,12 +92,14 @@ while True:
 
                 except:
                     mistake(2) # if a direction but not given both speed and time
-
+            
             elif message[0] == 'grab':
-                if message[1] in grabber:
-                    pin16.write_analog(grabber[message[1]])
-                else:
-                    mistake(3) # if grab but not given correct option
-
+                try:
+                    if message[1] in grabber:
+                        pin16.write_analog(grabber[message[1]])
+                    else:
+                        mistake(3) # if grab but option is not correct
+                except:
+                    mistake(4) # if grab but nothing else
             else:
                 mistake(1) # if not in directions or grab, you spelt something wrong
