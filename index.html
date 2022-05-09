@@ -46,6 +46,7 @@ display.show(Image.HAPPY)</pre>
   <div id="on-the-moon" class="left">
     <h3>Testing your Moonbuggy</h3>
     <p>If you are in Science Oxford's workshop, your robot is named after a current astronaut, and has a number.</p>
+    <p><a href="https://raw.githubusercontent.com/ScienceOxford/moon-buggies/master/examples/moonbuggy.py" target="_blank">If you not in a Science Oxford, download MoonBuggy.py, edit the channel numnber, and flash to your robot's micro:bit.</a></p>
     <p>Look at the information on your table to find out more about your astronaut, and find out what number they are - this is your <strong>radio channel number</strong>.</p>
     <p>Add the below code to your program, between<code> import radio</code> and before<code> display.show()</code>:</p>
     <pre>radio.on()
@@ -82,8 +83,15 @@ radio.config(channel=0)</pre>
 
   <div id="on-earth" class="left">
     <h3>Back to Earth</h3>
-    <p>-- difficult to test with the delay - scientists will practice on Earth before sending anything up into space</p>
-    <p>-- <code>radio.send('earth')</code> - will remove the delay ('moon' will put it back)</p>
+    <p>You probably noticed that your robot doesn't obey your commands immediately.</p>
+    <p>Information takes approximately 1.255 seconds to travel from Earth to the Moon, so if you were really sending commands one at a time to a robot on the Moon, then there would be a delay.</p>
+    <p>Scientists always test everything out on Earth before sending things to space, as testing is much easier this way!</p>
+    <br>
+    <p>For the rest of the workshop, you can turn this delay on and off, to make the robot behave as though it is on the Moon or on Earth, depending on what you are doing.</p>
+    <p>Send this command using the terminal to remove the delay:</p>
+    <pre>radio.send('earth')</pre>
+    <br>
+    <p>What do you think you could send to put the buggy back on the Moon?</p>
     <br>
   </div>
 
