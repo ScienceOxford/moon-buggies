@@ -97,20 +97,47 @@ radio.config(channel=0)</pre>
 
   <div id="grabber" class="left">
     <h3>Using the Grabber</h3>
-    <p>-- <code>radio.send('grab 1')</code></p>
-    <p>-- the grabbers have been set to 6 different positions (1 is most closed, 6 is most open)</p>
-    <p>-- test them - what options work best for the moon rocks?</p>
+    <p>Your robot has a grabbing claw on the front - this can open and close to varying amounts to help you collect moon rock samples to bring back to base camp.</p>
+    <pre> >> radio.send('grab 6')
+ >> radio.send('grab 1')</pre>
+    <br>
+    <p>The grabbers have 6 position options - 6 is fully open, 1 is fully closed.</p>
+    <p>Test it out - what options work best for the moon rocks?</p>
+    <p>Can you successfully transport moon rocks around the surface?</p>
     <br>
   </div>
 
   <div id="functions" class="left">
     <h3>Type more quickly with Functions</h3>
-    <p>make new function:</p>
-    <pre>def do(message):
-    radio.send(str(message))</pre>
+    <p>Typing every command in one at a time is really slow.</p>
+    <p>Now that you have practiced with the moon buggies, you know which commands you use most often - you can shorten what you need to write to make this happen, by using <strong>functions</strong>.</p>
+    <p>A function is like a recipe - you teach the micro:bit a set of instructions and give these instructions a name. Then you just need to use the name, and the micro:bit knows what to do.</p>
     <br>
-    <p>-- now you can type <code>do('forward 500 500')</code></p>
-    <p>-- saves you a bit of typing each time, which adds up!</p>
+    <h2>Example 1: shorten radio.send()</h2>
+    <br>
+    <pre>def do(message):
+    radio.send(message)</pre>
+    <br>
+    <p>The function allows you to replace radio.send with do:</p>
+    <pre> >> do('forward 500 500')
+ >> radio.send('forward 500 500')</pre>
+    <br>
+    <p>This saves you 8 letters of typing each time, which adds up to a lot when you are sending lots of commands.</p>
+    <br>
+    <p><strong>How it works:</strong></p>
+    <ul>
+        <li><code>def</code> is short for 'define', it means you are creating your function</li>
+        <li>We are naming this function <code>do</code> and it takes an <strong>argument</strong> called <code>message</code></li>
+        <ul>
+            <li>When you <strong>call</strong> the function (use it), whatever you type inside the brackets after <code>do()</code> will have the function's instruction applied to it</li>
+        </ul>
+        <li>So if we type<code> do('forward 500 500')</code></li>
+        <ul>
+            <li>The message<code> 'forward 500 500'</code> is sent over the radio.</li>
+        </ul>
+    </ul>
+    <br>
+    <h2>Example 2: combine instructions</h2>
     <br>
     <p>-- combine radio.send() instructions (up to 8 at once) in a new function, so you can send lots of instructions in one go</p>
     <p>e.g. to open the grabber, drive forward a small amount, then close the grabber... put all three instructions in a function then call it. every time you want to use the grabber, you now only need to type 1 line</p>
