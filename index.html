@@ -139,28 +139,35 @@ radio.config(channel=0)</pre>
     <br>
     <h2>Example 2: combine instructions</h2>
     <br>
-    <p>-- combine radio.send() instructions (up to 8 at once) in a new function, so you can send lots of instructions in one go</p>
-    <p>e.g. to open the grabber, drive forward a small amount, then close the grabber... put all three instructions in a function then call it. every time you want to use the grabber, you now only need to type 1 line</p>
     <pre>def grabber1():
     radio.send('grab 5')
+    sleep(10)
     radio.send('forward 500 1000')
-    radio.send('grab 1')</pre>
+    sleep(10)
+    radio.send('grab 1')
+    sleep(10)</pre>
     <br>
-    <p>To call it, type <code>grabber1()</code> - much quicker!</p>
+    <p>We can now use just one command in the terminal to send three radio messages at once:</p>
+    <pre> >> grabber1()</pre>
+    <br>
+    <p>This one instruction will open the grabber, drive a small amount forward, then close the grabber again - hopefully picking up a moon rock!</p>
+    <br>After testing out commands one at time, decide what would be useful to combine together.</p>
+    <ul>
+        <li>You can send up to 8 instructions at once.</li>
+        <li>Add a<code> sleep(10) </code> between each instruction to slow the messages down - too many at once can cause a memory error!</li>
+    </ul>
     <br>
   </div>
 
   <div id="extensions" class="left">
     <h3>What next?</h3>
-    <p>The links below give you some other ideas of things you could add to your project.</p>
+    <ul>
+        <li>We have three different kinds of moon rocks to collect, that might need different combinations of instructions to pick up correctly - write a different function for each type of rock.</li>
+        <li>Space research needs lots of funding! Can you make your robot do something cool, to attract investors in your project? A funky dance routine, driving in the shape of a letter... what do you think would increase interest in space research?</li>
+        <li>There is no air on the Moon, so sound cannot be heard there. But it is still a useful tool for the Earth-based researchers - your HQ micro:bit can <a href="speaker.html" target="_blank">play music and sound effects</a>, so try adding them into your functions.</li>
+    </ul>
     <br>
   </div>
-
-  <nav class="links bg_green">
-    <a href="sounds.html" target="_blank">add sound effects and music</a>
-    <a href="servo.html" target="_blank">edit the grabber code</a>
-    <a href="robot.html" target="_blank">edit the motor code</a>
-  </nav>
 
   <footer class="links">
     <a href="https://github.com/ScienceOxford/moon-buggies/" target="_blank">View on GitHub</a>
