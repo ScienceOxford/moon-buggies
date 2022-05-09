@@ -75,8 +75,8 @@ while True:
                     time = int(message[2])
                     if time > 10000:
                         time = 10000
-                    elif speed < 100:
-                        speed = 100
+                    elif time < 100:
+                        time = 100
 
                     if message[0] == 'forward' or message[0] == 'forwards':
                         drive(speed, speed)
@@ -92,7 +92,7 @@ while True:
 
                 except:
                     mistake(2) # if a direction but not given both speed and time
-            
+
             elif message[0] == 'grab':
                 try:
                     if message[1] in grabber:
