@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Moon Buggies</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+  <header>
+    <a href="https://scienceoxford.com" target="_blank"><img src=".\images\so_logo.png" alt="Science Oxford Logo" width="400px" height="auto"></a>
+    <h1>Adding music and sound effects</h1>
+  </header>
+
+  <div id="version2" class="left">
+    <h3>HQ micro:bit</h3>
+    <p>micro:bits come in two versions - v1 micro:bits are in the robots, and v2 micro:bits are attached to your computer.</p>
+    <p>Only v2 micro:bits have a built-in speaker, so this code will only work on your HQ micro:bits, not the ones in the moon buggies.</p>
+    <br>
+  </div>
+
+  <div id="sound-effects" class="left">
+    <h3>import audio</h3>
+    <p>At the top of your code, you will see the line<code> import radio </code>.</p>
+    <p>Make a new line after this one, and add the following line:</p>
+    <pre>import audio</pre>
+    <br>
+    <p>Without this line, the micro:bit won't know how to play the effects listed below.</p>
+    <br>
+    <p>Now decide when you want the sound effect to play,</p>
+    <ul>
+        <li>at the beginning, when you first run the code?</li>
+        <li>during one of your functions, if so, which one?</li>
+    </ul>
+    <p>Once you have decided, type this line in the correct place:</p>
+    <pre>audio.play(Sound.HELLO)</pre>
+    <br>
+    <p>Once you have tested it, change the sound to <a href="https://microbit-micropython.readthedocs.io/en/v2-docs/audio.html#built-in-sounds-v2" target="_blank">one of these other options</a>.</p>
+    <br>
+  </div>
+
+  <div id="music" class="left">
+    <h3>import music</h3>
+    <p>Back at the top of your code, add another line under the other imports:</p>
+    <pre>import music</pre>
+    <br>
+    <p>Where do you want the music to play? The tunes are longer than the sound effects.</p>
+    <p>Once you have decided, type this line in the correct place:</p>
+    <pre>music.play(music.ODE)</pre>
+    <br>
+    <p>Once you have tested it, change the tune to <a href="https://microbit-micropython.readthedocs.io/en/v2-docs/music.html#built-in-melodies" target="_blank">one of these other options</a>.</p>
+    <br>
+  </div>
+
+  <div id="wait" class="left">
+    <h3>wait=False</h3>
+    <p>If you add a tune into a function, no radio message will be sent until the music has stopped!</p>
+    <p>You can change this by telling it not to wait:</p>
+    <pre>music.play(music.ODE, wait=False)</pre>
+    <br>
+    <p>If unexpected things happen, check the <strong>order</strong> you are asking the micro:bit to do your commands in.</p>
+  </div>
+
+  <nav class="links bg_green">
+    <a href="index.html">Go Back</a>
+  </nav>
+
+  <footer class="links">
+    <a href="https://github.com/ScienceOxford/moon-buggies" target="_blank">View on GitHub</a>
+  </footer>
+
+</body>
+
+</html>
