@@ -45,16 +45,38 @@ display.show(Image.HAPPY)</pre>
 
   <div id="on-the-moon" class="left">
     <h3>Testing your Moonbuggy</h3>
-    <p>-- radio.on() + radio.config - use your robot's number</p>
+    <p>If you are in Science Oxford's workshop, your robot is named after a current astronaut, and has a number.</p>
+    <p>Look at the information on your table to find out more about your astronaut, and find out what number they are - this is your <strong>radio channel number</strong>.</p>
+    <p>Add the below code to your program, between<code> import radio</code> and before<code> display.show()</code>:</p>
     <pre>radio.on()
 radio.config(channel=0)</pre>
     <br>
-    <p>-- flash code to your micro:bit THEN click 'REPL' to open the terminal</p>
-    <p>-- press the reset button on the back of the micro:bit to start the program</p>
-    <p>-- in the terminal, type <code>radio.send('forward 500 500')</code> - what happens?</p>
-    <p>-- careful of spelling and spaces</p>
-    <p>-- try other directions 'backward' 'left' 'right'</p>
-    <p>-- first number is speed (up to 1023), second number is time (up to 10000, 10s)</p>
+    <p class=debugging><strong>Edit the channel number to be your robot's number!</strong></p>
+    <p>Flash your code to your micro:bit, and check for errors.</p>
+    <br>
+    <p>Click the 'REPL' button on Mu's menu, this will open a <em>terminal</em> at the bottom of your screen.</p>
+    <img src=".\images\repl.PNG" alt="Mu menu, highlighting 'Flash'" width="1000px" height="auto">
+    <br>
+    <p>Turn your micro:bit over and click the <strong>Reset button</strong> on the back (between the USB socket and the white battery socket).</p>
+    <p>You can now type commands directly into the terminal, to interact with your micro:bit. Try this:</p>
+    <pre> >> display.show(Image.YES)</pre>
+    <br>
+    <p>Does your micro:bit's display change?</p>
+    <p>Now try to send a message to your robot on the moon:</p>
+    <pre> >> radio.send('forward 500 500')</pre>
+    <br>
+    <p>Did your robot move? Check for error messages in the terminal, and try again.</p>
+    <ul>
+        <li>Check your spelling</li>
+        <li>Make sure there is a space between <code>forward</code> and each number</li>
+    </ul>
+    <br>
+    <p>Practice driving your moon buggy by combining these commands:</p>
+    <ul>
+        <li>directions = <code> forward, backward, left, right</code></li>
+        <li>The first number is the speed - maximum <code> 1023</code></li>
+        <li>The second number is time - maximum <code> 10000</code> (10s)</li>
+    </ul>
     <br>
   </div>
 
