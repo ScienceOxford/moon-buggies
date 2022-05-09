@@ -53,7 +53,8 @@ grabber = {'1': 35, '2': 40, '3': 45, '4': 50, '5': 55, '6': 60}
 
 while True:
     message = (radio.receive())
-    if message is not None and len(str(message).lower().split()) > 0: # if string contains at least one "word"
+    if message is not None and len(str(message).lower().split()) > 0: # if message is received and contains at least one "word"
+        message = message.lower()
         if message == 'earth':
             on_the_moon = False
         elif message == 'moon':
