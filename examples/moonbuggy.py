@@ -15,8 +15,6 @@ def stop():
 
 # Inputs between 0-1023 to control both motors
 def drive(L, R):
-    if on_the_moon is True:
-        sleep(1255)
     # Below controls the left wheel: forward, backward, stop at given speed
     if L > 0 and L <= 1023:
         LF.write_analog(abs(L))  # go forwards at speed given
@@ -64,6 +62,9 @@ while True:
 
         else:
             message = message.split()
+
+            if on_the_moon is True:
+                sleep(1255)
 
             if message[0] in directions:
                 try:
