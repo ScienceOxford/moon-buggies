@@ -4,8 +4,10 @@ import radio
 radio.on()
 radio.config(channel=0) #CHANGE CHANNEL
 
+display.show(Image.DUCK)
+
 def do(message):
-    radio.send(str(message))
+    radio.send(message)
 
 def instructions():
     radio.send('earth')
@@ -21,6 +23,6 @@ def instructions():
     radio.send('grab 2')
     sleep(100)
 
-do('forward 500 2000')
-do('grab 5')
-instructions()
+#do('forward 500 2000')
+#do('grab 5')
+#instructions()
