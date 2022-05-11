@@ -49,7 +49,7 @@ radio.config(channel=0, queue=10) #CHANGE CHANNEL
 
 on_the_moon = True
 directions = ['forward', 'forwards', 'left', 'right', 'backward', 'backwards']
-grabber = {'1': 35, '2': 40, '3': 45, '4': 50, '5': 55, '6': 60}
+grabber = {'1': 30, '2': 35, '3': 40, '4': 45, '5': 50, '6': 55}
 
 while True:
     message = (radio.receive())
