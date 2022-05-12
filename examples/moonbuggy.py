@@ -99,6 +99,7 @@ while True:
                 try:
                     if message[1] in grabber:
                         pin16.write_analog(grabber[message[1]])
+                        sleep(1000)
                     else:
                         mistake(3) # if grab but option is not correct
                 except:
