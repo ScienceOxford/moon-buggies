@@ -15,8 +15,25 @@
   </header>
 
   <div id="" class="left">
-    <h3>coming soon</h3>
-    <p>...</p>
+    <h3>Code Example</h3>
+    <pre>from microbit import *
+import radio
+
+radio.on()
+radio.config(channel=0)
+
+display.show(Image.DUCK)
+
+# begin a forever loop
+while True:
+    if button_a.was_pressed():
+        radio.send('forward 500 1000')
+    if button_b.was_pressed():
+        radio.send('grab 3')
+    if accelerometer.was_gesture('shake'):
+        radio.send('left 500 5000')</pre>
+    <br>
+    <p>Look at the <em>syntax</em> and think about where you should add it into your own program - remember that the micro:bit will do your instructions in the order you write them.</p>
     <br>
   </div>
 
