@@ -93,6 +93,7 @@ while True:
                     stop()
 
                 except:
+                    radio.send('Add speed & time')
                     mistake(2) # if a direction but not given both speed and time
 
             elif message[0] == 'grab':
@@ -101,8 +102,11 @@ while True:
                         pin16.write_analog(grabber[message[1]])
                         sleep(1000)
                     else:
+                        radio.send('Check grabber 1-6')
                         mistake(3) # if grab but option is not correct
                 except:
+                    radio.send('Add grabber 1-6')
                     mistake(4) # if grab but nothing else
             else:
+                radio.send('Unknown command!')
                 mistake(1) # if not in directions or grab, you spelt something wrong
